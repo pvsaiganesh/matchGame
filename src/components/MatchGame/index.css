@@ -1,0 +1,9 @@
+.bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-bg.png');
+}
+.score-bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png');
+}
+p {
+  color: white;
+}
