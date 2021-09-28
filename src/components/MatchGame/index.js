@@ -265,11 +265,11 @@ class MatchGame extends Component {
   }
 
   createTimer = () => {
-    const {time} = this.state
     this.timerId = setInterval(() => {
+      const {time} = this.state
       if (time === 0) {
-        this.setState({showScore: true})
         clearInterval(this.timerId)
+        this.setState({showScore: true})
       }
       this.setState(prev => ({
         time: prev.time - 1,
@@ -295,11 +295,11 @@ class MatchGame extends Component {
     const result = questionObj.id === id
     if (result) {
       clearInterval(this.timerId)
-
       this.setState(
         prev => ({
           score: prev.score + 1,
-          questionObj: imagesList[prev.score + 1],
+          questionObj:
+            imagesList[Math.floor(Math.random() * imagesList.length)],
           time: 60,
         }),
         this.createTimer(),
@@ -347,7 +347,7 @@ class MatchGame extends Component {
                 />
               </li>
               <li>
-                <p>Score: {score}</p>
+                <p>Score:{score}</p>
               </li>
               <li>
                 <img
